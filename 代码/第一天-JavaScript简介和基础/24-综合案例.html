@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            /* 居中对齐 */
+            margin: 0 auto;
+            /* 文字居中对齐 */
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #000;
+            /* 合并相邻边框 */
+            border-collapse: collapse;
+        }
+
+        th {
+            /* 不设置具体宽度,防止放不下内容，只设置padding */
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>订单确认</h2>
+    <table>
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收货地址</th>
+        </tr>
+        <tr>
+            <td>小米手机</td>
+            <td id="price">100</td>
+            <td id="num">10</td>
+            <td id="total">1000</td>
+            <td id="address">广州</td>
+        </tr>
+    </table>
+
+    <script>
+        // 1.用户输入
+        let price = +prompt('请输入价格:')
+        let num = +prompt('请输入数量:')
+        let address = prompt('请输入地址:')
+        // 2.计算总额
+        // 虽然乘号会自动转换字符串为数字类型,但是为了程序健壮性，还是要设置转换
+        let total = price * num
+        // 3.页面打印 方法1
+        document.getElementById('price').innerHTML = price
+        document.getElementById('num').innerHTML = num
+        document.getElementById('total').innerHTML = total
+        document.getElementById('address').innerHTML = address
+        // 页面打印 方法2
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '123'
+        console.log(Number(str))
+        console.log(Number('pp')) //不对，只有把里面是数字的才可以转换为数字类型
+
+        salary = prompt('请输入年薪：')
+        console.log(Number(salary))
+
+        sa = Number(prompt('年薪：'))
+
+        let num = +prompt('请输入年薪：')
+        console.log(typeof num)
+
+        //只保留整数数字，忽略字符和小数
+        console.log(parseInt('12.34px'))
+        console.log(parseInt('12px'))
+
+        //保留整数和小数，忽略字符
+        console.log(parseFloat('12.34px'))
+
+
+        
+    </script>
+</body>
+</html>
