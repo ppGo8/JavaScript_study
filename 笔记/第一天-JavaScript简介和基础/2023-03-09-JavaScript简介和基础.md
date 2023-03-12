@@ -693,7 +693,7 @@ console.log(G)
    typeof 变量名 // 常用写法
    
    // 2.作为函数
-   typeof(便命令)
+   typeof(变量名)
    ```
 
 ### 类型转换

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //break 
+        let i = 1
+        while (i<=5) {
+            document.write(`我要吃${i}个包子<br>`)
+            if (i===3)
+            {
+                break  //结束整个循环,直接结束了。不用再设置变量变化值，用不到了
+            }
+            i++
+        }
+
+        // continue
+        let j = 1
+        while (j<=5 ) {
+            document.write(`我要吃${j}个草莓<br>`)
+            if ( j===3 )
+            {
+               j++      // continue下面的代码不执行,因此前面需要修改值,不然i一直是3,陷入了死循环
+               continue // 结束本次循环,下面的代码不再被执行
+            }
+            j++
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>  
+       // 案例：判断闰年的案例
+        // 用户输入
+        let year = +prompt('请输入年份')
+        // 判断输出
+        // 其实不添加括号也可以,因为&&优先级更高，year%100的语句是跟着&&判断的
+        if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            alert(`${year} 是闰年`)//注意,模板字符串外层符号是反义号
+        }
+        else {
+            alert(`${year} 是平年`)
+            console.log(`${year}`)
+        }
+        </script>
+
+</body>
+
+</html>

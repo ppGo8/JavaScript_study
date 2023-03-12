@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //练习1：页面输出1-100
+        let i = 1
+        while (i<=100) {
+            document.write(`我是第${i}行<br>`)
+            i++
+        }
+
+        //练习2：计算从1加到100的总和并输出
+        let j = 1
+        let sum = 0
+        while (j<=100) {
+            sum = sum + j
+            j++
+        }
+        document.write(`1-100的和是${sum}<br>`)
+
+        //练习3:计算1-100之间的所有偶数和
+        let k = 1
+        let sumOdd = 0
+        while (k<=100){
+            // 筛选偶数
+            sumOdd = sumOdd + (k % 2 === 0 ? k:0)  // 循环套if非常常见
+            k++
+        }
+        document.write(`1-100的偶数和是${sumOdd}`) //
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 0.初始金额
+        let money = 100 // 必须写在外边,不然会被循环重置
+
+        // 1.开始循环
+        while (true) {
+            //1.输入框写到循环里面
+            // 模板字符串是可以竖着显示的,单双引号不可以
+            let i = +prompt(`
+            请你选择操作:
+            1.存钱
+            2.取钱
+            3.查询余额
+            4.退出
+            `)
+
+            // 2.如果用户输入4退出循环
+            if (i === 4) {
+                break
+            }
+
+            // 3.根据其他输入做操作
+            switch (i) {
+                case 1:
+                    let cun = +prompt('请输入存钱的金额：')
+                    money = money + cun
+                    break  // 只会退出switch
+                case 2:
+                    let qu = +prompt('请输入取款金额:')
+                    if (qu > money){
+                        alert('余额不足,请重新输入！')
+                        break
+                    }
+                    money = money - qu
+                    break
+                case 3:
+                    alert(`你的银行卡余额是${money}`)
+                    break
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.单分支语句
+        if (false) {
+            console.log('执行语句')
+        }
+        console.log('--------------------')
+        // 除了0所有的数字都为真
+        if (-2) {
+            console.log('数字输出')
+        }
+        // 除了空字符串,所有字符串都为真
+        if ('pp') {
+            console.log('字符串的输出')
+        } 
+        if ('') {
+            console.log('空串的输出')
+        }
+        // 单分支小案例
+        let grade = +prompt('请输出高考成绩：')
+        if (grade > 700 ) {
+            alert('恭喜考入黑马程序员')
+        }
+
+
+
+    </script>
+</body>
+</html>
