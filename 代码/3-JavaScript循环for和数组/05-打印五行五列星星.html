@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //外层循环打印行数
+        for (let row = 1; row <= 5; row++) {
+            //内层循环打印几个星星
+            for (let col = 1; col <= 5; col++) {
+                document.write('★')
+            }
+            document.write('<br>') //注意在外层循环有一个换行符
+        }
+
+        document.write('-----------------------------------------我是分割线----------------------------------------<br>')
+        
+        //升级版本,用户输入几行几列,就打印多少
+        //起始变量其实是计数器用ijkmn等字母就好，不用使用赋予实际含义的词
+        //而判断条件中的那个变量，具有实际的含义，建议使用具有语义的词
+        let row = +prompt('请输入行数:')
+        let col = +prompt('请输入列数:')
+        //外层循环打印行数
+        for (let i = 1; i <= row; i++) {
+            //内层循环打印几个星星
+            for (let  j = 1; j <= col; j++) {
+                document.write('★')
+            }
+            document.write('<br>') //注意在外层循环有一个换行符
+        }
+
+    </script>
+</body>
+
+</html>

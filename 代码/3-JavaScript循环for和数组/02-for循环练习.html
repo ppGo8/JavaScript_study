@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //练习1：输出1-100岁
+        for (let i = 1; i <= 100; i++) {
+            document.write(`我今年${i}岁了<br>`)
+        }
+
+        //练习2：求1~100之间的偶数和
+        let sum = 0 //存上数字
+        for (let j = 0; j <= 100; j++) {
+            if (j % 2 === 0) {  //注意,设置的变量是谁
+                sum += j
+            }
+        }
+        document.write(`1-100之间的偶数和是${sum}<br>`)
+
+        //练习3：页面中打印五个小星星
+        for (let k = 0; k <= 50; k++) {
+            document.write('★')
+        }
+
+        //练习4：打印数组
+        let arr = ['刘德华', '刘晓庆', '刘若英']
+        //现在想打印每一个人,要写很多遍,很复杂
+        console.log(arr[0])       //打印刘德华
+        arr[1]
+        arr[2]
+        //简单写法,for循环
+        //遍历数组要求：
+        //变量初始值:必须从0开始，因为索引数组号从0开始
+        //变量终止条件：<arr.length  或者 <=arr.length-1 
+        // 推荐第一种写法
+        for (let m = 0; m < arr.length - 1; m++) {
+            console.log(arr[m])  //一次打印所有
+        }
+        //如果索引范围超过数组长度或索引空数组,会提示undefined但不报错
+    
+    </script>
+</body>
+
+</html>
