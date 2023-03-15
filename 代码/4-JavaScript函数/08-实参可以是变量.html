@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSum(n=0,m=0){
+            let sum =0
+            for (i=n;i<=m;i++){
+                sum += i
+            }
+            document.write(sum)
+        }
+        let num1 =+prompt('请输入第一个变量的值:')
+        let num2 =+prompt('请输入第二个变量的值:')
+        //调用函数
+        getSum(num1,num2)
+    </script>
+</body>
+</html>

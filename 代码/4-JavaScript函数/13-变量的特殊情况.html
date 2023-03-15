@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.不写let
+        let num = 10
+        function fn() {
+            num = 20 //使用前函数未声明,这默认这个是全局变量,全局变量被覆盖了
+            console.log(num) 
+        }
+        fn()
+        console.log(num)
+
+        //2.函数内部声明和赋值分开写
+        let num2 = 10
+        function fn() {
+            let num2 = 20
+            num2 = 30 // 前面声明了局部变量,这里修改的则是局部变量的值,不影响全局
+            console.log(num2)  //
+        }
+        fn()
+        console.log(num2)
+
+        //3.内部声明和赋值同时写
+        let n = 10       // 全局变量
+        function fn() {
+            let n = 20   // 局部变量
+            console.log(n)
+        }
+        fn()
+        console.log(n)
+
+        //4.外部也未声明
+        function fn(){
+            a = 100   //直接全局变量
+        }
+        console.log(a) 
+
+    </script>
+</body>
+
+</html>

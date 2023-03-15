@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //为了避免调用出bug,所以这里给了形参默认值
+        function fn(x = 0, y = 0) {
+            console.log(x + y)
+        }
+        
+        //另一种避免bug的写法:逻辑中断
+        function fn(x, y) {
+            x = x || 0   //undefined在逻辑运算中当假看
+            y = y || 0
+            console.log(x + y)
+        }
+
+        //逻辑中断
+        console.log(11 && 22) //都是真,返回输出最后一个真值
+        console.log(11 || 22) //有真，输出第一个真值
+        
+    </script>
+</body>
+
+</html>

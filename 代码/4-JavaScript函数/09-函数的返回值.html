@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函数返回值
+        function fn() {
+            return 20
+        }
+        fn()                //相当于执行了 fn() = 20 
+        console.log(fn())   //fn()是调用者,return值给了他
+        let re = fn()       // 相当于把20交给了re
+        console.log(re)
+
+        //求和函数的写法
+        function getTotalPrice(x = 0, y = 0) {
+            return x + y
+        }
+        let sum = getTotalPrice(1, 2) //后面在使用和直接使用sum即可,而不是写一长溜的函数
+        //哪里需要sum哪里写一下就好了
+        console.log(sum)
+    </script>
+
+</body>
+
+</html>

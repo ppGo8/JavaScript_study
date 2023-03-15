@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <script>
-        for (let i = 1; i <= 5; i++) {
-            for (let j = 1; j <= i; j++) { //启发,终止条件可以是和外层变量有关的表达式,其他各种变量
-                document.write('★')
-            }
-            document.write('<br>')
+        function getSum(num1,num2){
+            document.write(num1+num2)
         }
+        getSum(1,2)
+        getSum()  //相当于声明了一点变量没给值，结果是udefined + undefied = NaN
+
     </script>
 </body>
-
 </html>

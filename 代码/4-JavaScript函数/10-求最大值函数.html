@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //1.求两个数的最大值函数
+        function getMax(x, y) {
+            return x > y ? x : y
+        }
+        let max = getMax(1, 2)
+        console.log(max)
+
+        //2.求任意数组的最大值,并返回
+        function getArrMax(arr) {
+            // 先准备一个max变量存放数组的第一个值
+            let max = arr[0]
+            // 遍历比较
+            for (let i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            // 返回值
+            return max
+        }
+        let arrMax = getArrMax([1, 3, 5, 7])
+        console.log(arrMax) //现在打印只是为了验证结果,实际开发是不用打印的。实际开发中取得返回值,给别的程序使用。
+
+        // 
+        //2.求任意数组的最大值和最小值,并返回最值
+        function getArrValue(arr) {
+            // 先准备一个max变量存放数组的第一个值
+            let max = arr[0]
+            let min = arr[0]
+            // 遍历比较
+            for (let i = 1; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+                if (min > arr[i]) {
+                    min = arr[i]
+                }
+            }
+            // 数据装多个数据返回
+            return [max,min] 
+        }
+        let ArrValue = getArrValue([1, 3, 5, 7])
+        console.log(ArrValue) 
+        console.log(`返回的最大值是${ArrValue[0]}`)
+        console.log(`返回的最小值是${ArrValue[1]}`)
+
+    </script>
+</body>
+
+</html>

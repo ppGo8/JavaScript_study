@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.函数名相同，后面覆盖前面
+        function fn() {
+            console.log(1)
+        }
+        function fn() {
+            console.log(2)
+        }
+        fn()
+
+        //2.参数匹配
+        function fn2(a,b) {
+            console.log(a+b)
+        }
+        // 1)实参多余形参,剩余实参不参加运算
+        fn2(1,2,3)
+        // 2)实参少于形参,剩下的形参填充为undefined
+        fn2(1)  //返回结果NaN
+
+    </script>
+</body>
+</html>
