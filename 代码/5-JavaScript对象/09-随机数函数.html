@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(Math.random())
+        // 0-10之间的随机数
+        console.log(Math.floor(Math.random() * 11)) //float向下取整,永远取不到11
+
+        // 随机数应用
+        let arr = ['red', 'pink', 'blur']
+        // 取0-2之间的整数 包括0和2
+        let random = Math.floor(Math.random() * arr.length)
+        console.log(arr[random])
+
+        // 取m-n的随机整数
+        function getRandom(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m)
+        }
+        console.log(getRandom(6,10))
+
+    </script>
+</body>
+
+</html>

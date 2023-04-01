@@ -1,0 +1,388 @@
+/* 消除浏览器默认边距 */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 每个版心居中对齐,最外面的大盒子 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: #f3f5f7;
+    height: 3000px;
+}
+
+/* 去掉所有li的小圆点 */
+li {
+    list-style: none;
+}
+
+/* 去掉所有a的下划线 */
+a {
+    text-decoration: none;
+}
+
+/* 清除浮动的代码 */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.header {
+    height: 42px;
+    /* background-color: white; */
+    /* 注意，此地方会层叠w中的margin。所以要设置auto */
+    /* 层叠：w中的magin失效 */
+    margin: 30px auto;
+
+}
+
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+.nav {
+    float: left;
+    /* 整个导航栏部分和左侧logo的间隔 */
+    margin-left: 60px;
+}
+
+.nav ul li {
+    /* li是块级元素，所以是给li加浮动 */
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    /* a行内元素,不能给宽度和高度,设置为块级元素给高度 */
+    display: block;
+    /* 给高不给宽度,使用padding,不会撑起盒子 */
+    height: 42px;
+    padding: 0 10px;
+    line-height: 42px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    /* 下边框而不是下划线 */
+    border-bottom: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+
+.search {
+    float: left;
+    width: 412px;
+    height: 42;
+    margin-left: 70px;
+}
+
+.search input {
+    float: left;
+    /* 测量盒子宽度的时候不要测量边框 */
+    width: 360px;
+    /* 注意：这里盒子边框+盒子高度等于父级盒子42px */
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: none;
+    color: #bfbfbf;
+    font-size: 14px;
+    /* 输入的文字和盒子左侧具有一定距离 */
+    /* 此处如果用padding实现,那么上面盒子的宽度也要做减法,不然会撑大盒子 改为345px */
+    /* padding-left: 15px; */
+    /* 也可以使用缩进实现 */
+    text-indent: 1em;
+}
+
+.search button {
+    float: left;
+    height: 42px;
+    width: 50px;
+    /* 按钮默认有边框，需要手动去掉 */
+    border: none;
+    /* 添加背景图片 */
+    background: url(images/btn.png);
+}
+
+.user {
+    float: right;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+    /* 图片和文字水平对齐暂时还没学,后面补充 */
+}
+
+/* banner区域 */
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+/* 这里使用的非常巧妙 */
+.banner .w {
+    height: 421px;
+    background-color: pink;
+    background: url(images/banner2_20190819_210028.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    /* 黑色半透明的颜色 */
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+.subnav ul {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+}
+
+.subnav ul li a {
+    font-size: 14px;
+    color: #FFF;
+}
+
+.subnav ul a span {
+    float: right;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+.course {
+    float: right;
+    height: 300px;
+    width: 230px;
+    background-color: #fff;
+    /* 父子盒子外边距在一起,子盒子浮动 */
+    /* 这里不会发生外边距合并现象 */
+    margin-top: 50px;
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.course .bd {
+    padding: 0 20px;
+}
+
+.course .bd ul li {
+    padding: 14px;
+    border-bottom: 1px solid #ccc;
+}
+
+.course .bd ul li h4 {
+    font-size: 14px;
+    color: #4e4e4e;
+}
+
+.course .bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.course .bd .more {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700px;
+    font-weight: 700;
+}
+
+/* 精品推荐模块 */
+.goods {
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    /* 行高会继承 */
+    line-height: 60px;
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.goods ul {
+    float: left;
+    margin-left: 30px;
+}
+
+.goods ul li {
+    float: left;
+    font-size: 16px;
+}
+
+.goods ul li a {
+    padding: 0 30px;
+    border-left: 1px solid #ccc;
+    color: #ccc;
+}
+
+.goods .mod {
+    float: right;
+    margin-right: 30px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+/* box核心区域 */
+.box {
+    margin-top: 30px;
+}
+
+.box .box-hd {
+    /* 给个高度 把bd的盒子挤下去 */
+    /* 或者取消浮动 */
+    height: 45px;
+}
+
+.box h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+
+.box a {
+    float: right;
+    font-size: 15px;
+    color: #a5a5a5;
+    /* 浮动盒子不用担心外边距合并问题 */
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* 把li的父亲ul修改的足够宽 一行能够装开五个盒子 就不会换行了 */
+/* 如果分别修改最后的一个小li 去掉 */
+
+.box-bd ul {
+    width: 1225px;
+}
+
+.box-bd ul li {
+    position: relative;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+/* 设置了小li图片宽度为父元素的100% */
+.box-bd ul li>img {
+    width: 100%;
+}
+
+.box-bd ul li em {
+    position: absolute;
+    top: 2px;
+    /* 右边要稍微出来一点 */
+    right: -4px;
+}
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+
+.box-bd .info span {
+    color: #ff7c2d;
+}
+
+.footer {
+    height: 600px;
+    background-color: #f3f5f7;
+}
+
+.footer .w {
+    padding-top: 30px;
+
+}
+
+/* 最后的版权模块 */
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    font-size: 12px;
+    color: #666;
+    margin: 20px 0 15px 0;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    font-size: 16px;
+    color: #00a4ff;
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    /* 最好是左侧的距离 */
+    /* 因为最后一个右侧没有更好看,第一个左侧有也不用取消 */
+    margin-left: 100px;
+}
+.links dl dt {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.links dl dd a{
+    font-size: 12px;
+    color: #333;
+
+}

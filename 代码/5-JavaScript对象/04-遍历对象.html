@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ['blue','red','pink']
+        for (let k in arr){
+            console.log(k)
+            console.log(arr[k])  //开发中很少使用k方法遍历数组，因为k是字符串类型  
+        }
+        console.log('**************************')
+        console.log(arr['0'])  //在数组中，字符和数值类型的下标值均可。可能内含了转换
+        console.log('**************************')
+
+        let obj = {
+            uname : 'pink',
+            age : 18,
+            gender : '男'
+        }
+        // 遍历对象
+        for (let key in obj){
+            console.log(key)  // 属性名,字符串类型的
+            console.log(obj.key) //相当于obj.'uname' 在.后添加了引号,实际使用不添加引号
+            console.log(obj[key])
+        }
+
+    </script>
+</body>
+</html>

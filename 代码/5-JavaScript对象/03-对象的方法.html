@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '刘德华',
+            // 方法
+            song: function (x, y) {
+                console.log(x + y)
+            },
+            dance: function () {
+                console.log('我在唱歌')
+            }
+        }
+
+        // 方法调用 对象名.方法名()
+        obj.song(1, 2)   //1 2是实参
+
+
+        // 练习
+        // 声明
+        let person = {
+            name: 'andy',
+            sayHi: function () {
+                document.write('Hi~~')
+            }
+        }
+
+        // 对象调用
+        person.sayHi()  //不要忘记括号
+
+        // 注意,不要使用以下形式输出
+        // 因为这个函数没有返回值,则默认返回undefined,打印输出的结果是undefied
+        console.log(person.sayHi())
+
+        // 获得用户id
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.声明对象
+        let pink = {
+        uname : 'pink老师',
+        age : 18,
+        sex : '男'
+        }
+
+        // 练习1
+        let obj = {
+        name : '小米10青春版',
+        num : '10012816024',
+        weight : '0.55kg',
+        address : '中国大陆'
+        }
+        console.log(obj)
+
+        // 1.对象使用
+        console.log(obj.address)
+        console.log(obj.name)
+
+        //2.对象改
+        pink.sex = '女'
+        console.log(pink.sex)
+
+        //3.对象增
+        pink.hobby = '足球'
+        console.log(pink)
+
+        //4.对象属性删除
+        delete pink.age
+        console.log(pink)
+
+
+        // 练习2
+        obj.name = '小米10 plus'
+        obj.color = '粉色'
+        console.log(obj.name)
+        console.log(obj.num)
+        console.log(obj.weight)
+        console.log(obj.address)
+        console.log(obj.color)
+        
+        console.log(obj['name'])  //中括号里面没有对象名
+        console.log(obj['num'])
+        console.log(obj['weight'])
+        console.log(obj['address'])
+        console.log(obj['color'])
+
+
+
+    </script>
+
+</body>
+
+</html>

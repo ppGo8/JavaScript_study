@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.随机点名，可重复
+        let arr = ['赵云', '黄忠', '关于', '张飞', '曹操', '马超', '刘备']
+        // 1.得到随机数作为数组索引号,随机数范围0-6
+        let random = Math.floor(Math.random()*arr.length)
+        // console.log(arr[random])
+
+        //2.随机点名，不允许重复
+        //思路：把抽到的元素删掉，抽到谁山谁
+        //pop()末尾 unshift删除第一个
+        //splice(起始位置(下标)，删除几个元素)删除指定位置的数组，并返回值
+        console.log(arr.splice(random,1))
+        console.log(arr)
+    </script>
+    
+</body>
+
+</html>

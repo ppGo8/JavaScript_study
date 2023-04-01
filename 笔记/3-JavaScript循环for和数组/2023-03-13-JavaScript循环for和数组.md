@@ -96,7 +96,8 @@ for (外部声明循环次数的变量;循环条件;变化值) {
 
 **执行过程**：<font color=red>外层for执行一次，里面的for要执行所有次。</font>
 
-<<<<<<< HEAD
+
+
 ## 数组
 
 ### 数组是什么
@@ -266,9 +267,3 @@ arr.sort(function(a,b){
     return b - a
 })
 ```
-=======
-
-
-
->>>>>>> 157fd663ea9b50e2cdecd239b1e1f82264200cff
-

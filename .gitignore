@@ -1,0 +1,8 @@
+/_site
+/dist
+/dist.tar.gz
+/Gemfile.lock
+/.jekyll-cache
+*.assets
+*.images
+/资料

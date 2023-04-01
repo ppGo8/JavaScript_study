@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.生成随机数1-10
+        function getRandom(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m)
+        }
+        // 注意random放在循环外面
+        let random = getRandom(1, 10)
+
+        let flag = true //开关变量，提示用户次数达到
+        for (let i = 1; i <= 3; i++) {
+            // 2.用户输入
+            num = +prompt('请输入1~10之间的一个数字:')
+            if (num > random) {
+                alert('数字猜大了')
+            } else if (num < random) {
+                alert('数字猜小了')
+            } else {
+                flag = false // 提前猜对,后面就不提醒次数已用完
+                alert('猜对了！')
+                break   //避免死循环
+            }
+        }
+        if (flag) {
+            alert('次数已经用完了')
+        }
+        // 2.用户输入
+        // 3.猜测3次
+    </script>
+</body>
+</html>

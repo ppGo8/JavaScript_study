@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        td,
+        th {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            padding: 2px 10px;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body cap>
+    <h2>学生信息</h2>
+    <p>将数据渲染到页面中...</p>
+    <table>
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+
+        <!-- script写在这里 -->
+        <script>
+            // 1. 数据准备
+            let stu = [
+                { name: '小明', age: 18, gen: '男' },
+                { name: '小红', age: 19, gen: '女' },
+                { name: '小刚', age: 18, gen: '男' },
+                { name: '小丽', age: 20, gen: '女' }
+            ]
+            // 2.渲染页面
+            for (let i = 0; i < stu.length; i++) {
+                document.write(`
+                <tr>
+                    <td>${i+1}</td>
+                    <td>${stu[i].name}</td>
+                    <td>${stu[i].age}</td>
+                    <td>${stu[i].gen}</td>
+                </tr>
+                `)
+            }
+
+        </script>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.随机生成1-10之间的数组
+        // 取m-n的随机整数
+        function getRandom(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m)
+        }
+        // 注意random放在循环外面
+        random = getRandom(1, 10)
+
+        // 需要不断循环
+        // 不限定循环次数,因此应该是用while
+        // 但是如果不写退出条件就会死循环，所以应该设置退出条件：猜对的时候退出
+        while (true) {
+            // 2.用户输入
+            let num = +prompt('请输入一个1-10之间的数字：')
+
+            // 3.判断输出
+            if (num > random) {
+                alert('数字猜大了')
+            } else if (num < random) {
+                alert('数字猜小了')
+            } else {
+                alert('猜对了！')
+                break   //避免死循环
+            }
+        }
+    </script>
+</body>
+
+</html>
