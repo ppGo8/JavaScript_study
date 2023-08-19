@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" value="电脑"> -->
+    <!-- 多选框 -->
+    <input type="checkbox" name="" id="" value="">多选
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+    <input type="checkbox" name="" id="">
+
+    <button disabled>点击</button>
+
+    <script>
+
+        // // 1.获取元素
+        // const uname = document.querySelector('input')
+        // // 2.获得值
+        // console.log(uname.value)
+        // uname.value = '我要买电脑'
+        // uname.type = 'password' // 不显示内容
+
+
+        // 多选框获取 checked
+        const ipt = document.querySelector('input')
+        ipt.checked = true
+        console.log(ipt.checked)
+
+        // 这样写,也会被勾上。 ‘true’中包含默认的隐式转换，变为true。只有空字符串才是false
+        const ipts = document.querySelectorAll('input + input')
+        if (ipt.checked === true) {
+            console.log('这里没问题')
+            for (let i = 0; i < 3; i ++ ) {
+                ipts[i].checked = true
+            }
+        }
+
+        // disabled禁用按钮
+        // 1.获取
+        const bun = document.querySelector('button')
+        bun.disabled = true
+
+
+
+    </script>
+</body>
+
+</html>

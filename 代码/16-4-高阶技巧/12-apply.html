@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            uname: 'uname'
+        }
+        function fn(x, y) {
+            console.log(x,y,x+y)
+            console.log(this)
+        }
+        // 调用函数,改变this指向;截止到这里看起来和call没什么区别
+        fn.apply(obj)
+        fn.apply(obj, [1, 2])  // 传入的参数有区别,传入必须是数组形式，但是形参那里并不影响
+        // 返回值 
+        
+
+        // 使用场景：求数组最大值
+        Math.max(1,2,3) // 只能输入数学的这种形式
+        // 第一个参数：不指向任何或Math都可以
+    
+        const max = Math.max.apply(null,[1,2,3])
+        console.log(max) 
+
+    </script>
+</body>
+
+</html>

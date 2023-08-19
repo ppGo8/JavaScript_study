@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.getTime()方法获得时间戳
+        const date = new Date()
+        console.log(date.getTime())
+        // 2.+new Date()
+        console.log(+ new Date())
+        // 3.Date.now() 不需要实例化
+        console.log(Date.now())
+
+
+        // 获得指定时间时间戳
+        console.log(+ new Date('2023-06-30'))
+
+        // 根据日期Day() 0-6 返回星期几的格式
+        const arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'] // 使用数组索引的方式
+        console.log(arr[new Date().getDay()]);
+    </script>
+</body>
+</html>

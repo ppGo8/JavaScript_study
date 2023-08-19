@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*find方法 */
+        // find查找到第一值结束
+        const arr = [{
+            name: '小米',
+            price: 3999
+        },
+        {
+            name: '华为',
+            price: 3999
+        }]
+
+        // find返回的是满足条件的当前的item,而不是筛选条件
+        const mi = arr.find(function (item) {
+            return item.name === '小米'
+        })
+
+        // 箭头函数的形式
+        const mii = arr.find(item => item.name === '小米')
+        console.log(mii)
+
+        /*every 每一个是否都符合条件，如果都符合返回true，否则返回false*/
+        const arr3 =[10,20,30]
+        const flag = arr3.every(item => item>=10)
+        console.log(flag);
+    </script>
+</body>
+
+</html>

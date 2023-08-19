@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>发送短信</button>
+    <script>
+        // const obj = {
+        //     age: 18
+        // }
+        // function fn() {
+        //     console.log(this)
+        // }
+        // // bind不会调用函数
+        // // 能改变this指向
+        // const fun = fn.bind(obj) //返回值是函数，这个函数里面的this是更改过的
+        // fun() // 原函数的拷贝
+
+
+        // 需求：有一个按钮，点击就禁用，2s之后开启
+        const btn = document.querySelector('button')
+        btn.addEventListener('click', function () {
+            this.disabled = true
+            // 定时器默认的this指向window
+            setTimeout(function () {
+                // 解决方法1：
+                this.disabled = false // 需要在最后秀爱setTimeout函数的this指向为btn；否则这里面的this指向的window没办法关
+                // 解决方法2：
+                // btn.disabled = false
+            }.bind(btn), 2000) // 在此处修改了this指向,this = btn
+        })
+
+    </script>
+</body>
+
+</html>

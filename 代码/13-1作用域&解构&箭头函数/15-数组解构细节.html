@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 1.变量多，单元值少
+        // const [a,b,c,d] = [1,2,3]
+        // console.log(a)
+        // console.log(b)
+        // console.log(c)
+        // console.log(d)
+
+        // // 2.变量少，单元值多
+        // // 如果不确定有多少值传过来,可以使用剩余参数.
+        // const [e,f,...other] = [1,2,3,4]
+        // console.log(e)
+        // console.log(f)
+        // console.log(other) // 真数组:[3,4]
+
+        // // 3.防止undefined传递,可以给变量默认值
+        // const [x=0,y=0] = [1]
+        // console.log(x);
+        // console.log(y);
+
+        // // 5.按序导入赋值
+        // const [h,i,,k] = [1,2,3,4] // 第三个不要
+
+        // 6.解构多维数组
+        const [a,b,c] = [1,2,[3,4]]
+        console.log(a)
+        console.log(b)
+        console.log(c) //[3,4]
+
+        const [x,y,[m,n]] = [1,2,[3,4]]
+        console.log(x) // 1
+        console.log(y) // 2
+        console.log(m) // 3
+        console.log(n) // 4
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

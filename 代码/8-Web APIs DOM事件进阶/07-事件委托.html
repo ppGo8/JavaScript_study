@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>第1个孩子</li>
+        <li>第2个孩子</li>
+        <li>第3个孩子</li>
+        <li>第4个孩子</li>
+        <li>第5个孩子</li>
+        <p>我不需要变色</p> <!-- 不是所有子盒子都需要变色 -->
+    </ul>
+    <script>
+        // 点击每个小li 当前li 文字变红色
+        // 按照时间委托的方式
+        // 获得父元素
+        const ul = document.querySelector('ul')
+        ul.addEventListener('click', function (e) {
+            // 怎么只让被点击的li变色？问题等于拿到点击的哪个元素
+            console.dir(e.target) //就是我们点击的那个对象
+            // e.target.style.color = 'red'
+
+            // 需求：只要小li变色,别的不需要变色
+            if (e.target.tagName === 'LI'){
+                e.target.style.color = 'red'
+            }
+
+        }
+        )
+
+
+    </script>
+</body>
+
+</html>

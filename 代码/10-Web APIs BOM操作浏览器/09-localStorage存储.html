@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 注意:都需要添加引号
+        // 存储语法：localStorage.setItem('键','值')
+        localStorage.setItem('uname','pink')
+
+        // 获取语法:localStorage.getItem('键')
+        console.log(localStorage.getItem('uname'));
+
+        // 删除本地存储
+        localStorage.removeItem('uname')
+
+        // 存储年龄
+        localStorage.setItem('age',18)
+        console.log(localStorage.getItem('age')) // 返回的18是字符串类型,颜色是黑色而不是数字类型
+
+    </script>
+</body>
+</html>

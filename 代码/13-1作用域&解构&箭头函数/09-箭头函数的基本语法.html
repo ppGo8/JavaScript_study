@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函数表达式写法
+        // const fn = function(){
+        //     // 代码块
+        // }
+
+        // 1.箭头函数写法
+        // const fn = (x) => { //()里面是形参
+        //     console.log(x)
+        // }
+        // fn(1)
+
+        // 2.如果只有一个形参,可以省略小括号。注意:没有参数不可以省略小括号
+        // const fn = x => {
+        //     console.log(x)
+        // }
+        // fn(1)
+
+        // 3.如果只有一行代码,可以省略大括号
+        // const fn = x => console.log(x)
+        // fn(2)
+
+        // 4.只有一行代码，箭头函数可以省略return
+        // const fn = x => x + x
+        // console.log(fn(2))
+        // 上述写法等价于
+        // const fn = x => {
+        //     return x + x
+        // }
+
+        // 5.箭头函数可以直接返回一个对象
+        // 对象的表示方式是{},函数的表示方式也是{}。写法规定：使用小括号()包括大括号
+        const fn = (uname) => ({uname: uname}) //第一个uname是属性名,第二个是属性值：参数传入
+        fn('刘德华')
+
+
+    </script>
+</body>
+
+</html>

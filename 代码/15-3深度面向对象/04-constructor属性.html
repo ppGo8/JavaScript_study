@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // constrcutor 单词：构造函数
+        function Star() {
+
+        }
+        console.log(Star.prototype)
+        Star.prototype = {
+            // 重新指回创造原型对象的构造函数
+            constructor : Star, // 注意符号
+            sing: function () {
+                console.log('唱歌')
+            },
+            dance: function () {
+                console.log('跳舞')
+            }
+        }
+        console.log(Star.prototype)
+        // const ldh = new Star()
+        // console.log(Star.prototype)
+        // 二者相等
+        // console.log(Star.prototype.constructor === Star)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        观察网页结构
+        一级岗位在<class="menu-article">类中
+        二级岗位在一级岗位的下一个兄弟节点中
+        二级岗位在下一个兄弟节点的li标签中的h4中
+        三级岗位在下一个兄弟节点的li标签的div标签的a标签中
+        */
+        // 获取以及岗位
+        const first = document.querySelectorAll('.menu-article')
+        for (let i = 0; i < first.length; i++) {
+            // console.log('******一级岗位******')
+            // console.log('一级岗位:',first[i].innerText)
+            // 获取每个节点的兄弟节点
+            const second = first[i].nextElementSibling.children
+            for (let j = 0; j < second.length; j++) {
+                // 只显示二级岗位
+                // console.log(second[j].children[0].innerHTML);
+                // 显示二级和三级
+                console.log(second[j].children[1].innerText);
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>

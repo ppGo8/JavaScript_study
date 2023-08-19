@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 简单的写法
+        // function outer() {
+        //     let a = 10
+        //     function fn() {
+        //         console.log(a)
+        //     }
+        //     // 内层函数要在外层函数中调用,函数作用域
+        //     fn()
+        // }
+        // outer()
+
+        // 常见的外包形式:外包可以访问使用函数内部的变量
+        function outer() {
+            let a = 10
+            function fn() {
+                console.log(a)
+            }
+            return fn  // fn是一个函数,不要写小括号,小括号代表调用
+        }
+
+
+        // 函数外面的人想使用这个10
+        // outer() === fn === functon fn() {}
+        const fun = outer()  // outer()里面装的函数,可以使用变量接受返回值
+        fun() // 调用函数
+        console.log(fun)
+        // fun = function () {}
+
+        // 闭包应用：统计函数的调用次数
+        function count() {
+            let i = 0
+            function fn(){
+                i++
+                console.log(`这个函数调用了${i}次`)
+            }
+            return fn
+        }
+        const funCount = count()
+        
+
+
+    </script>
+</body>
+
+</html>

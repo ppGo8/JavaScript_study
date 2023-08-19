@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个猪的构造函数
+        function Pig(uname, age) {
+            this.uname = uname  // this指向那个对象
+            this.age = age
+        }
+        // const obj = new Object() 这是new Object()的写法,现在是自己定义了一个
+        // 调用方式,new+函数名()
+        const peiQi = new Pig('佩奇', 6)
+        const geo = new Pig('乔治', 12)
+
+        console.log(peiQi)
+        console.log(geo)
+
+
+        function Goods(name, price, count) {
+            this.name = name
+            this.price = price
+            this.count = count
+        }
+        // new关键字开辟新的内存空间,同时将赋值运算符左侧的变量引用该内存空间
+        // new开辟新的内存空间重要!!!
+        const mi = new Goods('小米', 1999, 20)
+        const hw = new Goods('华为', 3999, 59)
+        const vivo = new Goods('vivo', 1888, 100)
+
+        console.log(mi)
+        console.log(hw)
+        console.log(vivo)
+
+
+    </script>
+</body>
+
+</html>

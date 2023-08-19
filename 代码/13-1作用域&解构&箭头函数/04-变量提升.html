@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(num + '件') // undefined件
+        var num = 10
+
+        // 上述写法等价于
+        var num   // 只提升声明,不提升赋值
+        console.log(num + '件') // undefined件
+        num = 10
+        console.log(num)
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2222年2月22日</p>
+    <p class="title">下班倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="scond">20</span>
+    </p>
+    <p class="tips">18:30:00下课</p>
+  </div>
+  <script>
+    // 随机颜色函数
+    // 1. 自定义一个随机颜色函数
+    function getRandomColor(flag = true) {
+      if (flag) {
+        // 3. 如果是true 则返回 #ffffff
+        let str = '#'
+        let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+        // 利用for循环随机抽6次 累加到 str里面
+        for (let i = 1; i <= 6; i++) {
+          // 每次要随机从数组里面抽取一个  
+          // random 是数组的索引号 是随机的
+          let random = Math.floor(Math.random() * arr.length)
+          // str = str + arr[random]
+          str += arr[random]
+        }
+        return str
+
+      } else {
+        // 4. 否则是 false 则返回 rgb(255,255,255)
+        let r = Math.floor(Math.random() * 256)  // 55
+        let g = Math.floor(Math.random() * 256)  // 89
+        let b = Math.floor(Math.random() * 256)  // 255
+        return `rgb(${r},${g},${b})`
+      }
+
+    }
+    // 页面刷新随机得到颜色
+    const countdown = document.querySelector('.countdown')
+    countdown.style.backgroundColor = getRandomColor()
+
+
+
+    // 函数封装 getCountTime
+    function getCountTime() {
+      // 得到当前时间戳
+      const now = + new Date()
+      // 得到将来时间戳
+      const last = +new Date('2023-05-01 18:30:00')
+      console.log(now, last);
+      // 得到剩余的时间戳,并且转换成秒数
+      const count = (last - now) / 1000
+      console.log(count)
+      // 时间戳转日期,注意用let,因为等下要补0.
+      let d = parseInt(count / (3600 * 24))
+      let h = parseInt(count / 3600 % 24)
+      let m = parseInt(count / 60 % 60)
+      let s = parseInt(count % 60)
+
+      d = d < 10 ? '0' + d : d
+      h = h < 10 ? '0' + h : h
+      m = m < 10 ? '0' + m : m
+      s = s < 10 ? '0' + s : s
+      console.log(d, h, m, s)
+
+      // 获取内容,修改值
+      const hour = document.querySelector('#hour')
+      const minutes = document.querySelector('#minutes')
+      const second = document.querySelector('#scond')
+
+      hour.innerHTML = h
+      minutes.innerHTML = m
+      second.innerHTML = s
+    }
+
+    // 定时器之前要先调用一次
+    getCountTime()
+    // 注意定时器中函数,是回调函数不添加小括号
+    setInterval(getCountTime, 1000)
+
+  </script>
+</body>
+
+</html>

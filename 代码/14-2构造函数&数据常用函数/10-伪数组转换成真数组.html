@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        const lis = document.querySelectorAll('ul li')
+        // lis伪数组没有pop(),使用了会报错
+        // lis.pop()
+        // 但是想使用该方法,删除其中的li
+        const liss = Array.from(lis) // 静态方法转换成真数组
+        console.log(liss.pop())
+        
+
+    </script>
+</body>
+</html>

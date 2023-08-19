@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生信息管理</title>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>新增学员</h1>
+  <form class="info" autocomplete="off">
+    姓名：<input type="text" class="uname" name="uname" />
+    年龄：<input type="text" class="age" name="age" />
+    性别:
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    薪资：<input type="text" class="salary" name="salary" />
+    就业城市：<select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">录入</button>
+  </form>
+
+  <h1>就业榜</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 
+        <tr>
+          <td>1001</td>
+          <td>欧阳霸天</td>
+          <td>19</td>
+          <td>男</td>
+          <td>15000</td>
+          <td>上海</td>
+          <td>
+            <a href="javascript:">删除</a>
+          </td>
+        </tr> 
+        -->
+    </tbody>
+  </table>
+  <script>
+    // 获取表单 
+    // 表单元素中的值:使用value属性
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const gender = document.querySelector('.gender')
+    const salary = document.querySelector('.salary')
+    const city = document.querySelector('.uname')
+
+    // 获取所有带name属性的元素
+    const item = document.querySelectorAll('[name]')
+
+    const tbody = document.querySelector('tbody')
+    /* 0.生成空数组,后续对进行操作都是在数组的基础上 */
+    const arr = []
+
+    /* 1.录入模块 */
+    // 1.1 表单提交事件
+    const info = document.querySelector('.info')
+    info.addEventListener('submit', function (e) {
+      // 阻止表单的默认提交,表单提交后会自动跳转到action属性的页面;如果没指定就是跳转到了当前页面
+      e.preventDefault()
+      // console.log('提交')
+
+      // 这里进行表单验证，如果不通过，直接中断，不添加到数组里
+      for (let i = 0; i < item.length; i++) {
+        // 注意是这个节点输入的值
+        if (item[i].value === '') {
+          return alert('输入不能为空')
+        }
+      }
+
+
+
+
+
+      // 用户提交表单后,创建新的对象接受用户传入的数据
+      const obj = {
+        stuID: arr.length + 1, // 实现自增
+        uname: uname.value,
+        age: age.value,
+        gender: gender.value,
+        salary: salary.value,
+        city: city.value,
+      }
+      // 数据追加给数组
+      arr.push(obj)
+      // 清空表单:清楚里面的文字
+      this.reset()  // 重置,复原给默认状态
+      // 调用渲染函数
+      render()
+
+      /* 2.渲染模块 */
+      // function render() {
+      //   // 遍历数组
+
+      //   const tr = document.createElement('tr')
+      //   tr.innerHTML = `
+      //     <td>${arr[arr.length -1].stuID}</td>
+      //     <td>${arr[arr.length -1].uname}</td>
+      //     <td>${arr[arr.length -1].age}</td>
+      //     <td>${arr[arr.length -1].gender}</td>
+      //     <td>${arr[arr.length -1].salary}</td>
+      //     <td>${arr[arr.length -1].city}</td>
+      //     <td>
+      //       <a href="javascript:">删除</a>
+      //     </td>
+      //      `
+      //   // 父元素追加tr
+      //   tbody.appendChild(tr)
+      // }
+      render()
+    }
+    )
+
+    // 下面的后渲染数据,会把数组中所有数组重新渲染一遍；因此在渲染前将所有数据清空
+    /* 2.渲染模块 */
+    function render() {
+      tbody.innerHTML = ''
+
+      // 遍历数组
+      for (let i = 0; i < arr.length; i++) {
+        const tr = document.createElement('tr')
+        // 在生成数据的时候,顺便生成自定义属性
+        tr.innerHTML = `
+          <td>${arr[i].stuID}</td>
+          <td>${arr[i].uname}</td>
+          <td>${arr[i].age}</td>
+          <td>${arr[i].gender}</td>
+          <td>${arr[i].salary}</td>
+          <td>${arr[i].city}</td>
+          <td>
+            <a href="javascript:" data-id=${i}>删除</a>
+          </td>
+           `
+        // 父元素追加tr
+        tbody.appendChild(tr)
+      }
+    }
+
+    // 3 删除操作
+    // 3.1 事件委托 tbody
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName == 'A') {
+        // 问题,怎么知道是哪个a呢？自定义属性
+        console.log(e.target.dataset.id)
+        // 删除arr对应的数据
+        arr.splice(e.target.dataset.id, 1)
+        // 重新渲染
+        render()
+      }
+    })
+
+
+
+  </script>
+
+</body>
+
+</html>

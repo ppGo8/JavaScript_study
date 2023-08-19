@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 自己定义数组的拓展方法，1.求和 2.最大值
+        // 要求:自己定义的方法，任何一个实例对象的欧可以使用
+        // 自定义方法写到 数组.prototype身上
+
+        const arr = [1, 2, 3]
+        /*1. 最大值 */
+        // console.log(...[1, 2, 3]); // 展开得到数字类型
+        // console.log([1, 2, 3].join
+        //     (',')); // 字符串类型
+
+        // Array.prototype.max = function (arr) {
+        //     // 展开运算符...
+        //     console.log(arr) //返回undefined,没有接受到参数值:因为在arr.max()调用时，没在max()里面写参数。
+        //     // 如果在()里面写arr参数,那么就很重复，因为前面调用的时候已经写过了，结果方法见下
+        //     return Math.max(...arr)
+        // }
+
+        // arr.max()
+
+        // 不想重复写arr作为参数的方法
+        Array.prototype.max = function () {
+            return Math.max(...this)
+        }
+
+        const max = arr.max()
+        console.log(max)
+
+
+        Array.prototype.sum = function () {
+            return this.reduce((prev,item) => prev+item, 0)
+        }
+        console.log(arr.sum())
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

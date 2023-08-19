@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 页面不设置高度的话没有滚动条 */
+            height: 3000px;
+        }
+
+        div {
+            display: none;
+
+            margin: 100px;
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+        我里面有很多文字
+    </div>
+    <script>
+        window.addEventListener('scroll', function () {
+            // 整个页面滚动多少
+            const n = document.documentElement.scrollTop // 在函数里面，每滚动一次，n就重新运行一次
+            // n是局部变量，在函数调用结束时就被清除了;下次调用时，重新创建了一个局部变量
+            if (n >= 100) {
+                div.style.display = 'block'
+            }
+            else {
+                div.style.display = 'none'
+            }
+        })
+
+        const div = document.querySelector('div')
+        div.addEventListener('scroll', function () {
+            console.log(parseInt(div.scrollTop))
+        })
+
+    </script>
+</body>
+
+</html>

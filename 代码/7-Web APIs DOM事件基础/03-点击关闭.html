@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+      width: 1000px;
+      height: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      text-align: center;
+      font-size: 50px;
+      line-height: 200px;
+      font-weight: 700;
+    }
+
+    .box1 {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background-color: skyblue;
+      text-align: center;
+      line-height: 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    我是广告
+    <div class="box1">X</div>
+  </div>
+  <script>
+    // 1.获取事件源
+    const box1 = document.querySelector('.box1')
+    // 2.事件监听
+    box1.addEventListener('click',function(){
+        const box = document.querySelector('.box')
+        box.style.display = 'none'
+    })
+  </script>
+</body>
+
+</html>

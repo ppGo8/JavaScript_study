@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            我是第一个
+        </li>
+    </ul>
+    <script>
+        /* 语法介绍 */
+        // // 1.创建节点
+        // const div = document.createElement('div')
+        // console.log(div)
+
+        // // 插入到父元素的最后
+        // document.body.appendChild(div) // 但是div标签插入到了script之后
+    
+
+        /* ul里面放入小li */ 
+        const ul = document.querySelector('ul')
+        const li = document.createElement('li')
+        // // 向li对象中添加内容
+        li.innerHTML = '我是小li'
+        // // 将li添加到ul中
+        // ul.appendChild(li)
+
+        /* 永远把新增加的小li放到最前面 */
+        // 巧妙利用节点之间的关系:直接获取父元素的第一个孩子;ps：如果在通过querySelector类选择器获得第一个孩子比较麻烦，要充分考虑节点
+        ul.insertBefore(li,ul.children[0])
+
+    </script>
+</body>
+</html>

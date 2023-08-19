@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        需求1
+        const pig = {
+            name:'佩奇',
+            age:6
+        }
+        const {name,age} = pig
+        console.log(name)
+        console.log(age)
+
+
+        // 需求2
+        // const pig = {
+        //     name: '佩奇',
+        //     age: 6
+        // }
+        // const { name: uname, age } = pig
+        // console.log(uname)
+        // console.log(age)
+
+        // 需求3
+        const goods = [{
+            goodsName: "小米",
+            price:1999
+        }]
+        const [{goodsName,price}] = goods
+        console.log(goodsName)
+        console.log(price)
+
+
+    </script>
+</body>
+
+</html>

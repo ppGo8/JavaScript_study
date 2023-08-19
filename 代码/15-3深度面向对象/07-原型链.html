@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 最大的构造函数
+        // function Object() {}  无需自己定义,已经定义好了
+        // __proto__指向prototype ，只不过是指向谁的不一样，自定义对象的protoype的__proto__指向Object的原型对象prototypr
+
+        console.log(Object.prototype === Person.prototype.__proto__)
+        console.log(Object.prototype.__proto__) // 最大对象，指向的null咩有人可以指向了
+        // 自己定义的persondui对象
+        function Person(){
+
+        }
+        const ldh = new Person()
+        console.log(ldh.__proto__ === Person.prototype)
+        console.log(Person.prototype) // 这个里面也有个__proto__
+
+        console.log(ldh instanceof Person)
+        console.log(ldh instanceof Object)
+        console.log(ldh instanceof Array)
+        console.log([1,2,3] instanceof Array)
+
+
+    </script>
+</body>
+</html>

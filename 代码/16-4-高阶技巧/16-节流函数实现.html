@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+  <script src="lodash.min.js"></script>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    let i = 0
+    function fn() {
+      box.innerHTML = i++
+    }
+
+    function throttle(fn, t) {
+      let timer = null
+      return function () {
+        if (!timer) {
+          timer = setTimeout(function () {
+            fn()
+            // 清空定时器
+            timer = null
+          }, t)
+        }
+      }
+    }
+    box.addEventListener('mousemove', throttle(fn, 500))
+  </script>
+</body>
+
+</html>

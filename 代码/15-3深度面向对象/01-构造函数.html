@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 构造函数 将公共的属性和方法，封装到构造函数里面
+        function Star(uname, age) {
+            this.uname = uname,  // this指向自己创建的实例对象
+                this.age = age
+            // this.sing = function () {
+            //     console.log('唱歌')
+        }
+
+        const ldh = new Star('刘德华', 18)
+        const zxy = new Star('张学友', 20)
+        // console.log(ldh === zxy)
+        // console.log(ldh.sing === zxy.sing) // 内容是一样的,但是却返回false
+
+        console.dir(Star.prototype)
+        Star.prototype.sing = function () {
+            console.log('唱歌')
+        }
+        ldh.sing() // 调用
+        zxy.sing() // 调用
+
+        console.log(ldh.sing === zxy.sing) // 这两个相等
+
+        // 公共的属性写在构造方法里
+        // 公共的方法写在原型对象上
+
+    </script>
+</body>
+
+</html>

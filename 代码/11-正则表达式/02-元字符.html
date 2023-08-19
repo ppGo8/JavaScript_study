@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 元字符
+        // 1.边界符
+        console.log(/哈/.test('哈'))
+        console.log(/哈/.test('哈哈'))
+        console.log(/哈/.test('二哈'))
+        console.log('------------------')
+
+        console.log(/^哈/.test('哈'))   //true
+        console.log(/^哈/.test('哈哈')) //true
+        console.log(/^哈/.test('二哈')) // false
+        console.log('------------------')
+
+        console.log(/^哈$/.test('哈'))   // true
+        console.log(/^哈$/.test('哈哈')) // false，这个是精确匹配,要求里面只能有一个字符
+        console.log(/^哈/.test('二哈'))
+
+        // *类似>=0次
+        console.log(/^哈$/.test('哈')); //true
+        console.log(/^哈*$/.test('哈哈')); // true
+        console.log(/^哈*$/.test('哈二哈')); // false 中间只能哈重复多次,字只能是哈不能是别的
+        console.log(/^哈+$/.test('哈')); 
+
+        console.log('------------------')
+
+        console.log(/^哈?$/.test('')); //true
+        console.log(/^哈*$/.test('')); // true
+        console.log(/^哈*$/.test('哈')); // true
+        console.log(/^哈*$/.test('哈哈')); // true
+
+        console.log('------------------')
+
+        // 量词{n}写几必须出现几次
+        console.log(/^哈{4}$/.test('哈'))
+        console.log(/^哈{4}$/.test('哈哈'))
+        console.log(/^哈{4}$/.test('哈哈哈'))
+        console.log(/^哈{4}$/.test('哈哈哈哈'))
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈'))
+        console.log(/^哈{4,}$/.test('哈哈哈哈哈哈哈'))
+
+        console.log('------------------')
+        // 字符类 [abc]只选择一个。注意：只能选一个字符
+        console.log(/^[abc]$/.test('a'));
+        console.log(/^[abc]$/.test('b'));
+        console.log(/^[abc]$/.test('c'));
+        console.log(/^[abc]$/.test('ac')); // false 三个里面只能选择一个，精确匹配是3选1。只有'a''b''b'为true
+        console.log(/^[abc]{2}$/.test('ac')); // false 三个里面只能选择一个，精确匹配是3选1。只有'a''b''b'为true
+
+        // 简化到极致 [a-z]
+        console.log(/^[a-z]$/.test('a')); 
+    </script>
+</body>
+</html>

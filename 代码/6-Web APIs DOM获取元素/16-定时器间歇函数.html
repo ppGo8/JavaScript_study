@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 匿名函数方法
+        // setInterval(function(){console.log('1s一次')},1000) 
+
+        // 有名函数方法
+        function fn() {
+            console.log('1s一次')
+        }
+        // // 注意,有名函数这里不加小括号，每隔1s,这个函数会自动去调用
+        // setInterval(fn,1000)
+
+        // // 加了(),那么只执行一次
+        // setInterval(fn(),1000)
+
+
+        // 接受定时器的返回值
+        // 用变量接受，因为是基本数据类型，而且后续定时器返回的值会变化 
+        let n = setInterval(fn, 1000) // 有返回值了,fn也会继续运行
+        console.log(n)
+        clearInterval(n)
+        
+        // 简谐函数和变量一起使用
+        let i = 1 
+        setInterval(function(){
+            i++
+            document.write(`${i} `)
+        },200)
+
+
+
+    </script>
+</body>
+
+</html>

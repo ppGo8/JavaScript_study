@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.w {
+    width: 1200px;
+    margin: auto;
+}
+body {
+    background-color: #f3f5f7;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table; 
+  }
+  .clearfix:after {
+    clear:both;
+  }
+  .clearfix {
+     *zoom:1;
+  }   
+ 
+
+.box {
+    margin-top: 30px;
+}
+.box-hd {
+    height: 45px;
+}
+.box-hd h3 {
+    float: left;
+    font-size: 20px;
+    color: #494949;
+}
+.box-hd a {
+    float: right;
+    font-size: 12px;
+    color: #a5a5a5;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+/* 把li 的父亲ul 修改的足够宽一行能装开5个盒子就不会换行了 */
+.box-bd ul {
+    width: 1225px;
+}
+.box-bd ul li {
+    position: relative;
+    top: 0;
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition: all .3s;
+   
+}
+.box-bd ul li a {
+    display: block;
+}
+.box-bd ul li:hover {
+    top: -8px;
+    box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+}
+.box-bd ul li img {
+    width: 100%;
+}
+.box-bd ul li h4 {
+    margin: 20px 20px 20px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+.box-bd .info {
+    margin: 0 20px 0 25px;
+    font-size: 12px;
+    color: #999;
+}
+.box-bd .info span {
+    color: #ff7c2d;
+}

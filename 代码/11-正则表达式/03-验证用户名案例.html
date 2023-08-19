@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 250px;
+            height: 30px;
+            vertical-align: middle;
+            line-height: 30px;
+            padding-left: 15px;
+        }
+
+        .error {
+            color: red;
+            background: url(./images/error1.png) no-repeat left center;
+        }
+
+        .right {
+            color: green;
+            background: url(./images/right.png) no-repeat left center;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <span></span>
+    <script>
+        const input = document.querySelector('input')
+        const span = document.querySelector('span')
+        const reg = /^[a-z][a-zA-Z0-9-_]{6,16}$/
+        
+        // 失去焦点
+        input.addEventListener('blur',function(){
+            if (reg.test(this.value)){
+                // 利用className的特性,覆盖了所有类
+                // 使用这个会有两个类，所以不用 span.classList.add('right')
+                span.className = 'right'
+                
+            }else{
+                // span.classList.add('error')
+                span.className = 'error'
+            }
+        })
+
+        // 重新获得焦点后，要取消原来的显示
+        input.addEventListener('focus',function(){
+            span.className = 'none' // 利用className的特性,覆盖了所有类
+            // span.classList.remove('right')
+            // span.classList.remove('error')
+
+        })
+    </script>
+</body>
+
+</html>

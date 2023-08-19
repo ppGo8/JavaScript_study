@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点击</button>
+    <script>
+        const btn = document.querySelector('button')
+        // btn.onclick = function(){
+        //     alert('点击了')
+        //     btn.onclick = null
+        // }
+
+
+        // L2 事件移除解绑
+        // btn.addEventListener('click',function(){
+        //     // 匿名函数无法被解绑，所以需要抽出去执行函数单独写
+        //     alert('点击')
+
+        // })
+        function fn() {
+            alert('点击')
+            btn.removeEventListener('click',fn) //执行一次后解绑 这个函数不事件激活不执行的
+        }
+        btn.addEventListener('click',fn)
+       
+
+    </script>
+</body>
+
+</html>

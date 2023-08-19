@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 以前this的粗略规则:谁调用这个函数,this就指向谁
+        console.log(this) // 指向window
+        function fn() {
+            console.log(this)
+        }
+        fn() // this指向window,该行代码等价于 window.fn() 省略了前面的window。window是调用者
+
+        // 对象方法里的this
+        obj = {
+            name: 'pink',
+            sayHi: function () {
+                console.log('hi')
+            }
+        }
+        obj.sayHi() // this指向obj
+
+        /*以下为箭头函数的this*/
+        const fn = () => {
+            console.log(this)
+        }
+        fn() // this指向window
+
+        const obj = {
+            uname:'pink',
+            sayHi:() => {
+                console.log(this)
+            }
+        }
+        obj.sayHi() // 此时，箭头函数的this沿用boj的this,window调用obj,因此指向window
+
+        const obj ={
+            uname:'pink',
+            l
+        }
+        
+    </script>
+</body>
+
+</html>

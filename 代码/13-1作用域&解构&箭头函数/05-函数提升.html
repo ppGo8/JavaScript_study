@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 会把所有函数的声明提升到当前作用域的最前面
+        // 只提升声明 不提升调用
+        fn()
+        function fn(){ //这个被提升了
+            console.log('函数提升');
+        }
+
+    </script>
+</body>
+</html>

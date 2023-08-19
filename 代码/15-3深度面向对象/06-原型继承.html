@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 第一个抽取方法：
+        // const Person ={
+        //     eyes:2,
+        //     head:1
+        // }
+
+        // 抽取方法更正：要求：结构一样但是对象不一样
+        function Person() {
+            this.eyes = 2,
+            this.head = 1
+        }
+
+        // 构造函数，通过继承实现
+        function Woman() {
+        }
+        function Man() {
+        }
+
+        // 女人继承
+        Woman.prototype = new Person
+        // prototype重新指向构造函数
+        Woman.prototype.constructor = Woman
+
+        // 给女人添加专有方法,生孩子；挂在woman的原型上，因为每个woman都有
+        Woman.prototype.baby = function () {
+            console.log('宝贝')
+        }
+        const red = new Woman()
+        console.log(red)
+        console.log(Woman.prototype)
+
+        // 男人继承
+        Man.prototype = new Person
+        Man.prototype.constructor = Man
+
+        const pink = new Man()
+        console.log(pink)
+        console.log(Man.prototype)
+
+
+    </script>
+</body>
+
+</html>

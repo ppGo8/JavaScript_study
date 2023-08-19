@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(./images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <strong>传智教育年会抽奖</strong>
+    <h1>一等奖：<span id="one">???</span></h1>
+    <h3>二等奖：<span id="two">???</span></h3>
+    <h5>三等奖：<span id="three">???</span></h5>
+  </div>
+  <script>
+    // 1.声明数组
+    const personArr = ['周杰伦', '刘德华', '周星驰', 'pink', '张学友']
+    // 2.1一等奖
+    const random1 = Math.floor(Math.random() * personArr.length)
+    // 2.2获取one元素
+    const one = document.querySelector('#one')
+    one.innerHTML = personArr[random1]   // 右边直接写变量即可
+    personArr.splice(random1, 1)    //删除元素
+
+    // 2.1二等奖
+    const random2 = Math.floor(Math.random() * personArr.length)
+    // 2.2获取two元素
+    const two = document.querySelector('#two')
+    two.innerHTML = personArr[random2]   // 右边直接写变量即可
+    personArr.splice(random2, 1)    //删除元素
+
+    // 2.1三等奖
+    const random3 = Math.floor(Math.random() * personArr.length)
+    // 2.2获取three元素
+    const three = document.querySelector('#three')
+    three.innerHTML = personArr[random3]   // 右边直接写变量即可
+    personArr.splice(random3, 1)    //删除元素
+    console.log(personArr.splice(0, 1))
+
+  </script>
+</body>
+
+</html>

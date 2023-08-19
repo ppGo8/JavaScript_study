@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+
+            list-style: none;
+        }
+
+        .mi {
+            position: relative;
+            width: 223px;
+            margin: 100px auto;
+        }
+
+        .mi input {
+            width: 223px;
+            height: 48px;
+            padding: 0 10px;
+            font-size: 14px;
+            line-height: 48px;
+            border: 1px solid #e0e0e0;
+            outline: none;
+        }
+
+        .mi .search {
+            border: 1px solid #ff6700;
+        }
+
+        .result-list {
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 223px;
+            border: 1px solid #ff6700;
+            border-top: 0;
+            background: #fff;
+            display: none;
+        }
+
+        .result-list a {
+            display: block;
+            padding: 6px 15px;
+            font-size: 12px;
+            color: #424242;
+            text-decoration: none;
+        }
+
+        .result-list a:hover {
+            background-color: #eee;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="mi">
+        <input type="search" placeholder="小米笔记本">
+        <ul class="result-list">
+            <li><a href="#">全部商品</a></li>
+            <li><a href="#">小米11</a></li>
+            <li><a href="#">小米10S</a></li>
+            <li><a href="#">小米笔记本</a></li>
+            <li><a href="#">小米手机</a></li>
+            <li><a href="#">黑鲨4</a></li>
+            <li><a href="#">空调</a></li>
+        </ul>
+    </div>
+    <script>
+        // 获得元素对象
+        const input = document.querySelector('input[type=search]') // 属性选择器:获得包含该属性的标签
+        console.log(input)
+        const ul = document.querySelector('ul')
+        console.log(ul)
+        // 表单获得光标,事件监听
+        input.addEventListener('focus',function() {
+            ul.style.display = 'block'
+            input.classList.add('search') // 这里添加类不用加.
+        })
+
+        // 表单失去光标,事件监听
+        input.addEventListener('blur',function() {
+            ul.style.display = 'none'
+            input.classList.remove('search')
+        })
+    </script>
+</body>
+
+</html>

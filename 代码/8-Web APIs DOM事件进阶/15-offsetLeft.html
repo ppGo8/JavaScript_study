@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: purple
+            ;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        const div= document.querySelector('div')
+        // console.log(div.offsetTop)  // margin外边距合并:会发生在相邻（水平、垂直）、嵌套的任意两个盒子中的上下外边距发生合并。左右外边距不发生合并
+        // 补充：外边距塌陷：嵌套盒子给孩子元素添加margin,结果是父元素整体向下移动，
+        // console.log(div.offsetLeft) // 左右8px的外边距
+
+        const p= document.querySelector('p')
+        console.log(p.offsetLeft)
+    </script>
+</body>
+</html>

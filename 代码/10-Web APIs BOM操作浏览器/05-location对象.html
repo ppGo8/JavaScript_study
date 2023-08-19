@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <!-- 得给表单中各个小元素指定了name之后网页才能接收输入的内容 -->
+        账号：<input type="text" name="uname"> <br />
+        密码：<input type="password" name="pwd" id=""> <br />
+        <button>提交</button>
+    </form>
+    <a href="#/my">我的</a>
+    <a href="#/love">收藏</a>
+    <a href="#/load">下载</a>
+    <button type="button" class="reload">刷新</button>
+
+
+    </form>
+
+    <script>
+        // console.log(window.location)
+        // console.log(location)
+
+        // 使用JS的方式跳转网页:location.href
+        // location.href = 'https://www.baidu.com/'
+        const reload = document.querySelector('.reload')
+        reload.addEventListener('click',function(){
+            // 强制刷新 ctrl+f5
+            location.reload(true)
+        })
+    </script>
+</body>
+
+</html>

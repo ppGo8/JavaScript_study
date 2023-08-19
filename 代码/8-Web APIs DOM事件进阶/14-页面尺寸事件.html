@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            /* width: 200px;  内容区域的宽度 */
+            height: 200px;
+            background-color: pink;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>12345465456465</div>
+    <script>
+        // resize  浏览器窗口大小发生变化时触发的事件
+        window.addEventListener('resize', function () {
+            console.log('尺寸发生了变化')
+        })
+
+        // 获取盒子的宽度
+        const div = document.querySelector('div')
+        window.addEventListener('resize',function(){
+            console.log(div.clientWidth)
+        })
+
+
+    </script>
+</body>
+
+</html>

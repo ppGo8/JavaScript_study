@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const box = document.querySelector('.box')
+    let i = 0
+    function mouseMove() {
+      // 如果函数存在大量消耗性能的代码，可能造成卡顿
+      box.innerHTML = i++
+    }
+
+    // 手写防抖函数
+    // 核心是利用setTimeout定时器来实现
+    // 1. 声明一个定时器变量
+    // 2. 当鼠标每次滑动都先判断是否有定时器了，如果有定时器先  清除以前的定时器 
+    // 3. 如果没有定时器则开启定时器，记得存到变量里面
+    // 4. 在定时器里面调用要执行的函数
+    function debounce(fn, t) {
+      let timer
+      // 返回一个函数
+      return function () {
+        if (timer) clearTimeout(timer)
+        timer = setTimeout(fn, t)   // fn和t都是传入的参数,注意：fn是回调函数不要写()
+
+      }
+    }
+    box.addEventListener('mousemove', debounce(mouseMove, 100))
+
+    // // 调用函数,返回在里面定义的function匿名函数
+    // debounce(mouseMove, 500)
+    // // 等价于
+    // function(){} // 里面写的匿名函数
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const obj = {
+        //     // 对象里面的属性其实也是变量，只不过在对象里面叫属性,在对象外面则叫变量。
+        //     uname: 'pink老师',
+        //     age: 18
+        // }
+
+        // // 以前使用属性的方法:obj.uname,obj.name
+
+        // // 解构的语法
+        // // 要求：左边的变量名必须和右边对象的属性名相同
+        // const { uname, age } = {
+        //     uname: 'pink老师',
+        //     age: 18
+        // }
+        // // 上面的写法等价于
+        // // const uname = obj.uname
+        // // const age = obj.age
+        // console.log(uname)
+        // console.log(age)
+
+        // // 如果变量的名称和其他名称冲突，可以给左边的变量改名
+        // const { uname: name1, age: age2 } = {
+        //     uname: 'pink老师',
+        //     age: 18
+        // }
+
+        /* 数组对象解构 */
+        const pig = [
+            {
+                uname:'佩奇',
+                age:6
+            }
+        ]
+        const [{uname,age}] = pig
+        console.log(uname)
+        console.log(age)
+
+    </script>
+</body>
+
+</html>

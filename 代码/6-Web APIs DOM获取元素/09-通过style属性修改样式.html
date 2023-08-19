@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">123</div>
+    <script>
+        //1.获取元素
+        const box = document.querySelector('.box')
+        // 2.修改样式属性 对象.style
+        box.style.width = '300px' //此处必须写字符串
+        // 就是把style属性的写法改成了.,通过=赋值,且=后内容为字符串需要添加''符号
+        // 遇到属性有-符号的方式，采取小驼峰命名法
+        box.style.backgroundColor = 'red' //style属性有-符号的这里要改成小驼峰
+        // 错误写法
+        // box.style.background-color = 'blue' //
+        box.style.border = '2px solid blue'   
+        box.style.borderTop = 'purple'
+       
+       </script>
+</body>
+</html>

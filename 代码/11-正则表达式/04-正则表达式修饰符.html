@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(/^java$/.test('Java'));
+        console.log(/^java$/i.test('Java')); // 匹配不区分大小写
+
+        const str = 'JAVA我是前端java'
+        // 这样只替换了第一个java
+        // |符号也可以，但是不如i
+        // const re = str.replace(/java|JAVA/,'猪头') // 替换之后有个返回值，需要接受
+
+        const re = str.replace(/java/i,'猪头') // 替换之后有个返回值，需要接受
+        console.log(re);
+        // 加上修饰符g,代表替换全部
+        const re2 = str.replace(/java/ig,'猪头') // 替换之后有个返回值，需要接受
+        console.log(re2);
+
+        
+    </script>
+</body>
+</html>

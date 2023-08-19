@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">
+    <script>
+        // 获得事件源
+        const input = document.querySelector('input')
+        // 键盘事件监听
+        input.addEventListener('keydown',function(){
+            console.log('按下键盘了')
+        })
+        input.addEventListener('keyup',function(){
+            console.log('抬起键盘了')
+        })
+
+        // 表单内容改变监听
+        input.addEventListener('input',function(){
+            console.log(input.value)
+        })
+
+    </script>
+</body>
+</html>

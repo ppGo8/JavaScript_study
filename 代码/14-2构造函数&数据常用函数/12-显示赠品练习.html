@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        const gift = '50g的茶叶,清洗球'
+        // // 1.把字符串拆分为数组
+        // console.log(gift.split(','))
+        // // 根据数组元素个数,生成对应的span标签
+        // const str = gift.split(',').map(function (item) {
+        //     // 返回数组格式的数据
+        //     return `<span>【赠品】${item}</span><br>`
+        // }).join('')
+        // console.log(str)
+
+        // // 直接把整个字符串渲染到html页面中,html页面会自动解析
+        // document.querySelector('div').innerHTML = str
+
+        // 简写上面的内容
+        document.querySelector('div').innerHTML = gift.split(',').map(item => `<span>【赠品】${item}</span><br>` ).join('')
+        
+
+    </script>
+</body>
+
+</html>

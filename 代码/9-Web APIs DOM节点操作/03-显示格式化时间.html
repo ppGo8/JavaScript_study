@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        const div = document.querySelector('div')
+        function getMyDate() {
+            const date = new Date()
+            let h = date.getHours()
+            let m = date.getMinutes()
+            let s = date.getSeconds()
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+
+            return `今天是：${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日 ${h}:${m}:${s}`
+        }
+        // 外面也有一个，因为计时器函数过了1s之后才自动执行
+        div.innerHTML = getMyDate()
+        // 计时器里面有一个，每1s执行一次
+        setInterval(function () {
+            div.innerHTML = getMyDate()
+        }, 1000)
+    </script>
+</body>
+
+</html>

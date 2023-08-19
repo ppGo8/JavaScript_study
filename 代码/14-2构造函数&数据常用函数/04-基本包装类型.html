@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 为什么下面的基本数据类型可以有属性和方法?
+        // 按道理来说不是只有对象复杂数据类型才有吗?
+        const str = 'pink'
+        console.log(str.length)
+
+        const num = 12
+        console.log(num.toFixed(2))
+
+        // JS底层
+        // 底层完成，把简单数据类型包装成了引用数据类型；不是程序员自己写的
+        // 基本包装类型:把基本的数据类型包装成了复杂数据类型
+        const str2 = new String('pink') 
+
+    </script>
+</body>
+
+</html>

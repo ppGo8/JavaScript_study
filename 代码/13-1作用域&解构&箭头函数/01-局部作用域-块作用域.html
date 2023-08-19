@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 0; i <= 3; i++){
+            console.log(i)
+        }
+        // i是块作用域,外面无法访问,块执行完后，i变量被销毁
+        console.log(i)
+
+        if (true) {
+            // 上面用let声明过i了,这里还继续声明i不会报错,是因为上面的i是块作用域已经被销毁了
+            let i = 0
+            console.log(i);
+        }
+        // 特殊:var不会产生块作用域，
+        for (var i = 0; i <= 3; i++){
+            console.log(i)
+        }
+        // i=4,还可以访问.因为var不回产生块作用域,所以外部可以访问
+        console.log(i)
+    </script>
+</body>
+
+</html>

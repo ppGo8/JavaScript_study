@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(./images/desktop_1.jpg) no-repeat top center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // console.log(document.body)
+        // console.dir(document.body)
+        // 可以直接用document.body而无需获取
+
+        // 随机取n-m的数字
+        function getRandom(n, m) {
+            return Math.floor(Math.random() * (m - n + 1) + n)
+        }
+        const random = getRandom(1,10)
+        // 不要忘记写style 要书写style
+        document.body.style.background = `url(./images/desktop_${random}.jpg) no-repeat top center `
+    </script>
+</body>
+</html>

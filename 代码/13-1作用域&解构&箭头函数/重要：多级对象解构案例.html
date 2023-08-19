@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1. 这是后台传递过来的数据
+    const msg = {
+      "code": 200,
+      "msg": "获取新闻列表成功",
+      "data": [
+        {
+          "id": 1,
+          "title": "5G商用自己，三大运用商收入下降",
+          "count": 58
+        },
+        {
+          "id": 2,
+          "title": "国际媒体头条速览",
+          "count": 56
+        },
+        {
+          "id": 3,
+          "title": "乌克兰和俄罗斯持续冲突",
+          "count": 1669
+        },
+
+      ]
+    }
+
+    // 需求1： 请将以上msg对象  采用对象解构的方式 只选出  data 方面后面使用渲染页面
+    const { data } = msg
+    console.log(data)
+    
+    // 需求2： 上面msg是后台传递过来的数据，我们需要把data选出当做参数传递给 函数
+    // 极致的简写,在传入参数的时候解构数据,获得需要的数据内容
+    function render({ data }) {
+      // 我们只要 data 数据
+      // 内部处理
+      console.log(data)
+
+    }
+    // 从数据库获得什么数据就用什么,不在外面多写像需求1那样的方式加工
+    render(msg)
+
+
+    // 需求3， 为了防止msg里面的data名字混淆，要求渲染函数里面的数据名改为 myData
+    function render({ data: myData }) {
+      // 要求将 获取过来的 data数据 更名为 myData
+      console.log(myData)
+    }
+    render(msg)
+
+  </script>
+</body>
+
+</html>

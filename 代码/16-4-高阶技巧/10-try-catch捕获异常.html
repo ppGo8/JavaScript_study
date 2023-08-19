@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>123</p>
+    <script>
+        function fn() {
+            try {
+                // 可能发生错误的代码 写到try里
+                const p = document.querySelector('.p')
+                p.style.color = 'red'
+            } catch (err) {
+                // err参数保存浏览器的异常信息，如果发生异常，catch拦截
+                // 拦截错误，提示浏览器提供的错误信息，但是不中断程序的执行
+                console.log(err.message) // catch不显示红色
+                // 觉得浏览器提供的信息不明显,自定义错误信息
+                throw new Error('你看看，选择器错误了吧')
+                // return // 自行中断
+            }
+            finally {
+                // 不管程序对不对，一定会执行的代码
+                // 只要执行try，就要执行finally
+                alert('弹出对话框')
+            }
+            // finally后的代码不再执行,在此处中断
+            console.log('11'); 
+        }
+        fn()
+    </script>
+</body>
+
+</html>

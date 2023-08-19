@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        arr = [
+            {
+                name: 'pink',
+                salary: 10000,
+            }
+            ,
+            {
+                name: 'red',
+                salary: 10000,
+            }
+            ,
+            {
+                name: 'blue',
+                salary: 10000,
+            }
+        ]
+
+        // 想用一个reduce直接计算各个员工的累计工资
+        // 错误写法
+        const totalerror = arr.reduce((prev, current) => {
+            console.log(prev.salary, current.salary)
+            //这样是不对的,因为prev一开始是对象,但是后面就变成了数字,结构变了,没有.salary属性
+            return prev.salary + current.salary
+        })
+
+
+        const totalright = arr.reduce((prev, current) => {
+            // prev数据类型:一直是数字
+            // current数据类型:一直是对象
+            return prev + current.salary 
+        },0)
+        console.log(totalright)
+    </script>
+</body>
+
+</html>

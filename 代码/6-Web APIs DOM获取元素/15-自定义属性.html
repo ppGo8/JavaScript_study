@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div data-id="1" data-spm = '不知道'>1</div>
+    <div data-id="2">2</div>
+    <div data-id="3">3</div>
+    <div data-id="4">4</div>
+    <div data-id="5">5</div>
+    <script>
+        const one = document.querySelector('div')
+        console.log(one)
+        console.log(one.dataset.id )
+        one.dataset.id = 10
+        console.log(one.dataset.id )
+
+    </script>
+</body>
+</html>

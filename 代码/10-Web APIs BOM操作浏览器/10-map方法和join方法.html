@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = ['red', 'pink', 'blue']
+
+        // 数组map方法
+        const arr1 = arr.map(function (ele, index) {
+            console.log(ele)
+            console.log(index)
+            return ele + '颜色'
+        })
+        console.log(arr1)
+
+        // 数组join方法，把数组转换成字符串
+        console.log(arr1.join())  // 下
+        console.log(arr1.join('|'))  // 下
+    </script>
+</body>
+
+</html>

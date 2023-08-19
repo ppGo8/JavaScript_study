@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tab栏切换</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .tab {
+      width: 590px;
+      height: 340px;
+      margin: 20px;
+      border: 1px solid #e4e4e4;
+    }
+
+    .tab-nav {
+      width: 100%;
+      height: 60px;
+      line-height: 60px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tab-nav h3 {
+      font-size: 24px;
+      font-weight: normal;
+      margin-left: 20px;
+    }
+
+    .tab-nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .tab-nav ul li {
+      margin: 0 20px;
+      font-size: 14px;
+    }
+
+    .tab-nav ul li a {
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      color: #333;
+    }
+
+    .tab-nav ul li a.active {
+      border-color: #e1251b;
+      color: #e1251b;
+    }
+
+    .tab-content {
+      padding: 0 16px;
+    }
+
+    .tab-content .item {
+      display: none;
+    }
+
+    .tab-content .item.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tab">
+    <div class="tab-nav">
+      <h3>每日特价</h3>
+      <ul>
+        <li><a class="active" href="javascript:; " data-id="0">精选</a></li>
+        <li><a href="javascript:;" data-id="1">美食</a></li>
+        <li><a href="javascript:;" data-id="2">百货</a></li>
+        <li><a href="javascript:;" data-id="3">个护</a></li>
+        <li><a href="javascript:;" data-id="4">预告</a></li>
+      </ul>
+    </div>
+    <div class="tab-content">
+      <div class="item active" ><img src="./images/tab00.png" alt="" /></div>
+      <div class="item" ><img src="./images/tab01.png" alt="" /></div>
+      <div class="item" ><img src="./images/tab02.png" alt="" /></div>
+      <div class="item" ><img src="./images/tab03.png" alt="" /></div>
+      <div class="item" ><img src="./images/tab04.png" alt="" /></div>
+    </div>
+  </div>
+
+  <script>
+    // 采取事件委托的形式 实现tab栏切换
+    const ul = document.querySelector('.tab-nav ul')
+    const items = document.querySelectorAll('.item')
+    // 添加事件
+    ul.addEventListener('click', function (e) {
+      // 只有点击了a才会进行 添加类和删除类
+      if (e.target.tagName === 'A') {
+        console.dir(e.target) // e.target是我们点击的对象
+        // 排他思想，移除原来的active，给当前的添加active
+        // 1.移除原来的
+        document.querySelector('.tab-nav .active').classList.remove('active')
+        // 2.给自己的添加 注意不能用this，this指向ul
+        e.target.classList.add('active')
+
+
+        // 实现tab下区域内容跟随tab切换
+        const i = parseInt(e.target.dataset.id) // 注意dataset.id是字符串类型,字符串加一是字符串拼接
+        // const i = +e.target.dataset.id
+        // 大盒子实现，排他思想
+        document.querySelector('.tab-content .active').classList.remove('active')
+        
+        // 以下两种方式等价
+        // 第一种
+        // document.querySelector(`.tab-content .item:nth-child(${i+1})`).classList.add('active')
+        // 第二种
+        items[i].classList.add('active')
+      }
+    }
+    )
+
+
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [100, 60, 80]
+        // 数组结构赋值
+
+        const [max, min, avg] = arr // 解构其实在批量声明，类似于下面的写法
+        // const max = arr[0]
+        // const min = arr[1]
+        // const avg = arr[2]
+        console.log(max) // 赋值运算符左边的变量已经声明和赋值了，可以直接使用
+
+        console.log('-----------------')
+        // 数组解构交换变量的值
+        let a = 1
+        let b = 3; // 这里必须有分号,不添加分号会报错
+        [a, b] = [b, a]  // 也有人喜欢把分号加载赋值运算符左边的中括号之前
+        console.log(a)
+        console.log(b)
+
+    </script>
+</body>
+
+</html>

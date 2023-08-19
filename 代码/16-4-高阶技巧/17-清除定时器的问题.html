@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let timer = null
+        timer = setTimeout(() => {
+            clearTimeout(timer)
+            console.log(timer)  // 已经清除了定时器,但是还是有
+        }, 1000) // 等时间到了清除定时器
+
+        // 原因
+        // 在setInterval中无法使用clearInterval清楚自己的定时器，因为这会还是使用
+        // 因此使用timer= null覆盖掉原来的值
+
+        let t = setTimeout(()=> console.log('aa'),1000)
+        t = clearTimeout(t) // 清楚要用t接受
+        console.log(t)
+
+       
+
+
+    </script>
+</body>
+
+</html>

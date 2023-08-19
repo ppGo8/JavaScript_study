@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn(x, y) {
+            if (!x || !y) {
+                // 没有传递参数进来
+                // 抛出异常,注意异常会红色显示
+                throw new Error('没有传递参数值进来')
+            }
+            return x + y
+        }
+        fn()
+        // console.log(fn())
+    </script>
+</body>
+
+</html>

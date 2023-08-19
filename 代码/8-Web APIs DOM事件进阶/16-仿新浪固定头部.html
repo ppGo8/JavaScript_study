@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            overflow: hidden;
+            width: 1000px;
+            height: 3000px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .backtop {
+            display: none;
+            width: 50px;
+            left: 50%;
+            margin: 0 0 0 505px;
+            position: fixed;
+            bottom: 60px;
+            z-index: 100;
+        }
+
+        .backtop a {
+            height: 50px;
+            width: 50px;
+            background: url(./images/bg2.png) 0 -600px no-repeat;
+            opacity: 0.35;
+            overflow: hidden;
+            display: block;
+            text-indent: -999em;
+            cursor: pointer;
+        }
+
+        .header {
+            position: fixed;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: purple;
+            text-align: center;
+            color: #fff;
+            line-height: 80px;
+            font-size: 30px;
+            transition: all .3s;
+            transition: all 1;
+        }
+
+        .sk {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            margin-top: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">我是顶部导航栏</div>
+    <div class="content">
+        <div class="sk">秒杀模块</div>
+    </div>
+    <div class="backtop">
+        <img src="./images/close2.png" alt="">
+        <a href="javascript:;"></a>
+    </div>
+    <script>
+
+        // 获取秒杀栏距离Body顶部的高度
+        const ms = document.querySelector('.sk') // 应该从小盒子这里选，因为大盒子他不是紧紧包围的
+
+        const header = document.querySelector('.header')
+        // 添加滚动事件
+        window.addEventListener('scroll', function () {
+            const n = document.documentElement.scrollTop
+            // if (n >= ms.offsetTop) {
+            //     header.style.top = '0'
+            // } else {
+
+            //     header.style.top = '-80px'
+            // }
+            header.style.top = n >= ms.offsetTop ? 0 : '-80px'
+        })
+
+    </script>
+</body>
+
+</html>

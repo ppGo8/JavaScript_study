@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj = {
+            uname : 'pink',
+            age : 18,
+            gender : 'nv'
+        }
+        // // 存储,注意第二个参数是变量不能添加''
+        // localStorage.setItem('obj',obj) // 将对象数据类型obj存储给 名为obj的键中
+        // // 获取,复杂数据类型的获取的内容看不懂,无法直接使用
+        // console.log(localStorage.getItem('obj'))
+
+        // 复杂数据类型存储必须转换为JSON字符串存储
+        localStorage.setItem('obj',JSON.stringify(obj))
+        // 取
+        console.log(localStorage.getItem('obj'))
+        console.log(typeof localStorage.getItem('obj'))
+        // JOSN对象： 属性和值有引号，而且引号都是双引号
+        // {"uname":"pink","age":18,"gender":"nv"}
+        console.log(JSON.parse(localStorage.getItem('obj')))
+       
+
+    </script>
+</body>
+</html>

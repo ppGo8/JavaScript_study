@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 多级对象结构 */
+        // const pig = {
+        //     name: '佩奇',
+        //     family: {
+        //         mother: '猪妈妈',
+        //         father: '猪爸爸',
+        //         sister: '乔治'
+        //     },
+        //     age: 6
+        // }
+        // const { name, family: { mother, father, sister }, age } = pig // 因为对象有很多个,要告诉人家是哪个对象的值
+
+        // console.log(name)
+        // console.log(mother)
+        // console.log(father)
+        // console.log(sister)
+        // console.log(age)
+
+        /* 多级数组对象结构 */
+        const pig = [{
+            name: '佩奇',
+            family: {
+                mother: '猪妈妈',
+                father: '猪爸爸',
+                sister: '乔治'
+            },
+            age: 6
+        }]
+        const [{name,family:{mother,father,sister},age}] = pig
+        console.log(name)
+    </script>
+</body>
+
+</html>

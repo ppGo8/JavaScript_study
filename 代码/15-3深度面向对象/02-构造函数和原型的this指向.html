@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let that 
+        function Star(uname) {
+            // that = this
+            this.uname = uname // 要添加this,不然就是普通函数了
+        }
+        Star.prototype.sing = function () {
+            that = this
+            console.log('唱歌')
+        }
+
+        // 实例对象
+        const ldh = new Star('刘德华')
+        ldh.sing() // sing中this指向ldf
+        console.log(that === ldh) // 两个that均为true
+    </script>
+</body>
+
+</html>

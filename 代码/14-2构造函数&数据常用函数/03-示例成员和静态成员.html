@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例对象和实例成员
+        // function Pig(name) {
+        //     this.name = name
+        // }
+        // const pei = new Pig('佩奇')
+        // const geo = new Pig('乔治')
+        // console.log(pei === geo)
+
+        // pei.name = '小猪佩奇'
+        // console.log(pei.name)
+        // console.log(geo.name)
+        // pei.sayHi = () => {
+        //     console.log('sayhi')
+        // } 
+        // pei.sayHi()
+        // console.log(geo);
+
+        // 静态成员
+        function Pig(name) {
+            this.name = name
+        }
+        Pig.eyes = 2 // 静态属性,只有一份
+        console.log(Pig.eyes)
+        Pig.sayHi = function () {
+            console.log('aaa');
+            console.log(this) // 注意这里没用箭头函数,因为箭头函数没有自己的this
+        }
+        Pig.sayHi()
+
+    </script>
+</body>
+
+</html>

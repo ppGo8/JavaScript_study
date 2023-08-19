@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">123</div>
+    <div class="box">abs</div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        // 1.获取匹配的第一个元素
+        const div = document.querySelector('div')
+        console.dir(div)  //打印js
+        const box = document.querySelector('.box')
+        console.log(box)//选的是第一个
+
+        const li = document.querySelector('ul li:first-child')
+        console.log(li)
+
+        // 2.选择全部元素
+        const liAll = document.querySelectorAll('li')
+        console.dir(liAll)
+        // 3.for循环打印每个数组
+        for (let i = 0; i < liAll.length; i++){
+            console.dir(liAll[i])
+        }
+
+    </script>
+</body>
+
+</html>
